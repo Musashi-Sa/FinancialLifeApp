@@ -1,20 +1,23 @@
-{
-  "name": "financial-life-app",
-  "version": "1.0.0",
-  "main": "App.js",
-  "scripts": {
-    "start": "expo start",
-    "android": "expo run:android",
-    "web": "expo start --web"
-  },
-  "dependencies": {
-    "expo": "~51.0.0",
-    "react": "18.2.0",
-    "react-native": "0.74.1",
-    "@react-native/js-polyfills": "0.74.1"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.20.0"
-  },
-  "private": true
-}
+name: Build Android APK
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Export App Bundle
+        run: npx expo export --platform android --clear
