@@ -1,0 +1,35 @@
+# Expo
+node_modules/
+.babelrc
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Debug
+*.pem
+
+# Android
+android/
+
+# iOS
+ios/
+
+# MacOS
+macos/
+
+# Web
+build-web/
+
+# Cache
+.TSBuildInfo
+.TSBuildInfo.xml
+
+# IDE
+.idea/
+.vscode/
+
+# Misc
+.DS_Store
