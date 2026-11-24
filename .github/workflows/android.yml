@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,5 +20,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build
-        run: npx expo export:embed
+      - name: Verify App Bundle
+        run: npx react-native bundle --platform android --dev false --entry-file App.js --bundle-output android-bundle.js
