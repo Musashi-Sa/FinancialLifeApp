@@ -15,10 +15,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20
-          cache: 'npm'
 
-      - name: Install dependencies
-        run: npm install
+      - name: Clean Install Dependencies
+        run: |
+          rm -f package-lock.json
+          npm install
 
       - name: Export App Bundle
         run: npx expo export --platform android --clear
