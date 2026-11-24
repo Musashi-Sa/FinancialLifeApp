@@ -1,24 +1,27 @@
-name: Build Android APK
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Bundle App
-        run: npx expo export:embed --platform android --dev false --entry-file App.js --bundle-output dist/bundle.js
+  subtitle: { fontSize: 14, color: '#94a3b8', textAlign: 'center', marginBottom: 20 },
+  card: { backgroundColor: '#1e293b', borderRadius: 16, padding: 20, marginBottom: 20, borderWidth: 1, borderColor: '#334155' },
+  cardTitle: { color: '#94a3b8', fontSize: 14 },
+  balanceText: { color: '#f8fafc', fontSize: 32, fontWeight: 'bold', marginVertical: 8 },
+  row: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 10 },
+  subLabel: { color: '#94a3b8', fontSize: 12 },
+  incomeText: { color: '#4ade80', fontSize: 16, fontWeight: 'bold' },
+  expenseText: { color: '#f87171', fontSize: 16, fontWeight: 'bold' },
+  formCard: { backgroundColor: '#1e293b', borderRadius: 16, padding: 20, marginBottom: 20, borderWidth: 1, borderColor: '#334155' },
+  formTitle: { color: '#f8fafc', fontSize: 18, fontWeight: 'bold', marginBottom: 12 },
+  input: { backgroundColor: '#0f172a', borderWidth: 1, borderColor: '#334155', borderRadius: 8, padding: 12, color: '#fff', marginBottom: 12 },
+  rtlInput: { textAlign: 'right' },
+  typeRow: { flexDirection: 'row', gap: 10, marginBottom: 12 },
+  typeBtn: { flex: 1, padding: 10, borderRadius: 8, backgroundColor: '#0f172a', alignItems: 'center', borderWidth: 1, borderColor: '#334155' },
+  incomeActive: { backgroundColor: '#065f46', borderColor: '#10b981' },
+  expenseActive: { backgroundColor: '#7f1d1d', borderColor: '#ef4444' },
+  typeText: { color: '#fff', fontWeight: '600' },
+  saveBtn: { backgroundColor: '#3b82f6', padding: 14, borderRadius: 8, alignItems: 'center' },
+  saveBtnText: { color: '#fff', fontSize: 16, fontWeight: 'bold' },
+  historyCard: { backgroundColor: '#1e293b', borderRadius: 16, padding: 20, marginBottom: 40, borderWidth: 1, borderColor: '#334155' },
+  noTxText: { color: '#94a3b8', textAlign: 'center', fontStyle: 'italic' },
+  txItem: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 10, borderBottomWidth: 1, borderBottomColor: '#334155' },
+  txDesc: { color: '#f8fafc', fontSize: 16 },
+  txAmount: { fontSize: 16, fontWeight: 'bold' },
+  incAmt: { color: '#4ade80' },
+  expAmt: { color: '#f87171' },
+});
