@@ -1,20 +1,19 @@
 {
   "name": "financial-life-app",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "App.js",
   "scripts": {
     "start": "expo start",
     "android": "expo run:android",
     "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "^51.0.28",
+    "expo": "~51.0.0",
     "react": "18.2.0",
-    "react-native": "^0.74.2"
+    "react-native": "0.74.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.0",
-    "@react-native/metro-config": "^0.74.2",
-    "babel-preset-expo": "^11.0.2"
-  }
+    "@babel/core": "^7.20.0"
+  },
+  "private": true
 }
