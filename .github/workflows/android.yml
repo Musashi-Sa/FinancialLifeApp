@@ -20,5 +20,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Verify App Bundle
-        run: npx react-native bundle --platform android --dev false --entry-file App.js --bundle-output android-bundle.js
+      - name: Export App Bundle
+        run: npx expo export --platform android --clear
